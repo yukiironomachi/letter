@@ -1,0 +1,120 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#ececec;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+/* 全体 */
+#scene{
+    position:relative;
+    width:500px;
+    height:360px;
+    cursor:pointer;
+}
+
+/* 手紙隠し */
+#letterContainer{
+
+    position:absolute;
+
+    left:50%;
+    bottom:90px;
+
+    transform:translateX(-50%);
+
+    width:320px;
+    height:160px;
+
+    overflow:hidden;
+
+    z-index:1;
+}
+
+/* 手紙 */
+#letter{
+
+    position:absolute;
+
+    left:0;
+
+    top:160px;
+
+    width:320px;
+
+    transition:
+        top 1s ease;
+
+    z-index:1;
+}
+
+/* 封筒 */
+#envelope{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:420px;
+
+    height:220px;
+}
+
+/* 本体 */
+#body{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:#000;
+
+    border-radius:3px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.15);
+
+    z-index:10;
+}
+
+/* フタ */
+#flap{
+
+    position:absolute;
+
+    width:100%;
+    height:110px;
+
+    background:#111;
+
+    clip-path:
+        polygon(
+            0 0,
+            50% 100%,
+            100% 0
+        );
+
+    transform-origin:
+        center top;
+
+    transition:
+        transform .8s ease;
+
+    box-shadow:
+        inset 0 -2px 4px rgba(255,255,255,.05);
+
+    z-index:20;
+}
